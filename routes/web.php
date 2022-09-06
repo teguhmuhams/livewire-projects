@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/calculator', Calculator::class);
+Route::redirect('/', 'counter');
+
+Route::view('/counter', 'welcome')->name('counter');
+
+Route::get('/calculator', Calculator::class)->name('calculator');
